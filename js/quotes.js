@@ -2,6 +2,7 @@ const url = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32b
 var quote = document.querySelector('#quote');
 var btn = document.querySelector('#btn');
 var author = document.querySelector('#author');
+var tweetQuote = document.querySelector('#tweet-quote');
 var quotesData;
 
 function getQuotes(){
@@ -12,7 +13,8 @@ function getQuotes(){
     quotesData = data;
     var num = Math.floor(Math.random() * quotesData.quotes.length);
     var quoteOutput = quotesData.quotes[num].quote;
-    var authorOutput = `<em>-${quotesData.quotes[num].author}</em>`;
+    var authorOutput = `${quotesData.quotes[num].author}`;
+    tweetQuote.href = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + '"' + quoteOutput + '" - ' + authorOutput;
     setTimeout(function(){quote.innerHTML = quoteOutput;
     author.innerHTML = authorOutput;},500);
   })
@@ -27,9 +29,7 @@ function toggleTheme(){
 
 toggle.addEventListener('click', toggleTheme)
 
-function togglebtnTheme(){
-  var togglebtn = document.getElementById('toggle');
-  togglebtn.classList.toggle("togglebtn");
-}
 
-togglebtn.addEventListener('click', togglebtnTheme)
+// function tweeti(){
+// }
+// tweetQuote.addEventListener('click', tweeti);

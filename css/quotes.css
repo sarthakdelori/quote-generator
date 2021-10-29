@@ -33,20 +33,27 @@ body{
   text-align: center;
 }
 
-#quote-box > button{
+.button{
   width: 90px;
   height: 30px;
   margin: 0 auto;
   font-weight: 300;
   margin-top: 40px;
+  background-color: rgb(182, 194, 218);
   outline: none;
   border-color: transparent;
   border-radius: 2px;
 }
 
-#quote-box > button:hover{
+.button:hover{
   cursor: pointer;
   background-color: aquamarine;
+}
+
+#tweet-quote{
+  font-size: larger;
+  width: 200px;
+  text-decoration: none;
 }
 
 #quote{
@@ -54,7 +61,7 @@ body{
   text-align: left;
 }
 
-#author{
+.author-div{
   text-align: right;
   font-size:1.2rem;
 }
